@@ -1,12 +1,12 @@
-# Repositório de Atividades Práticas — Introdução à Criptografia
+# Repositório de Atividades Práticas - Introdução à Criptografia
 
-Este repositório reúne as implementações completas, resolvidas, testadas e documentadas das atividades práticas de código referentes aos **12 Cadernos do Aluno (Encontros 01 ao 12)** da disciplina de Introdução à Criptografia.
+Este repositório reúne as implementações completas, resolvidas, testadas e documentadas das atividades práticas de código referentes aos **Cadernos do Aluno** da disciplina de Introdução à Criptografia.
 
 Cada encontro possui sua própria pasta isolada contendo o código-fonte executável, suíte de testes unitários automatizados com `unittest` e um arquivo explicativo `README.md` detalhando as justificativas matemáticas, propriedades de segurança e respostas aos desafios conceituais.
 
 ---
 
-## 📁 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```text
 Cripto/
@@ -29,7 +29,7 @@ Cripto/
 
 ---
 
-## 📚 Visão Geral dos Cadernos
+## Visão Geral dos Cadernos
 
 | Caderno / Encontro | Tema Principal | Arquivos Principais | Conceito-Chave |
 | :--- | :--- | :--- | :--- |
@@ -48,7 +48,7 @@ Cripto/
 
 ---
 
-## 🛠️ Pré-requisitos e Instalação
+## Pré-requisitos e Instalação
 
 ### Requisitos
 * **Python 3.10 ou superior**
@@ -82,7 +82,7 @@ python -m pip install -r requirements.txt
 
 ---
 
-## 🚀 Como Executar os Códigos
+## Como Executar os Códigos
 
 ### Executando o script principal de uma atividade específica:
 Você pode executar o arquivo `atividade_11.py` de qualquer caderno:
@@ -100,7 +100,7 @@ python -m unittest discover -s caderno_09_encontro09 -p "test_*.py" -v
 
 ---
 
-## 🧪 Execução Global de Todos os Testes
+## Execução Global de Todos os Testes
 
 O repositório disponibiliza um script unificado (`run_all.py`) que executa a suíte de testes de todos os 12 cadernos e imprime um relatório consolidado com tempo e status:
 
@@ -117,5 +117,5 @@ python -m unittest discover -p "test_*.py" -v
 
 ---
 
-## 🛡️ Aviso Acadêmico e Limites de Segurança
+## Aviso Acadêmico e Limites de Segurança
 Os parâmetros reduzidos utilizados em algumas atividades (como chaves de 4 bits no Feistel, blocos de 4 bits nos modos de operação, RSA com primos pequenos $p=7, q=13$ e grupo Diffie-Hellman com $p=23$) têm **finalidade estritamente didática** para permitir cálculos manuais, inspeção passo a passo e compreensão conceitual de vulnerabilidades. Para uso em produção, devem ser utilizadas bibliotecas auditadas (como `cryptography`) com algoritmos e parâmetros padronizados (AES-GCM de 256 bits, Ed25519/X25519, RSA-OAEP/PSS $\ge$ 2048/3072 bits, SHA-256/SHA-512).
