@@ -1,4 +1,4 @@
-# 📧 Atividade em Dupla — E-mail Criptografado com AES
+# Atividade em Dupla - E-mail Criptografado com AES
 
 Este projeto implementa um sistema completo de **envio e recebimento de e-mails criptografados utilizando o algoritmo AES (Advanced Encryption Standard)** para a atividade prática em dupla.
 
@@ -8,7 +8,7 @@ Ele possui as **duas versões** necessárias para a dinâmica entre você e seu 
 
 ---
 
-## 📂 Arquivos da Pasta
+## Arquivos da Pasta
 
 * [`aes_email.py`](./aes_email.py): Módulo principal contendo a implementação do **AES-256-GCM** (criptografia autenticada com validação de cabeçalhos `De/Para/Assunto` via AAD), **AES-256-CBC** (com padding PKCS#7), derivação de chave por senha (**PBKDF2-HMAC-SHA256**) e envio opcional por **SMTP**.
 * [`criptografar_email.py`](./criptografar_email.py): **Versão 1 (Remetente)** — Interface passo a passo para criar e criptografar um e-mail para enviar ao seu amigo.
@@ -18,9 +18,9 @@ Ele possui as **duas versões** necessárias para a dinâmica entre você e seu 
 
 ---
 
-## 🚀 Passo a Passo para Fazer a Atividade com seu Amigo
+## Passo a Passo para Fazer a Atividade com seu Amigo
 
-### 1️⃣ Quando VOCÊ for enviar o e-mail criptografado para o seu amigo:
+### Quando a primeira pessoa enviar o e-mail criptografado para o seu amigo:
 No terminal, dentro da pasta principal ou desta pasta, execute:
 ```bash
 python "email criptografado (AES)/criptografar_email.py"
@@ -34,7 +34,7 @@ python "email criptografado (AES)/criptografar_email.py"
 
 ---
 
-### 2️⃣ Quando o SEU AMIGO te enviar o e-mail criptografado dele para você descobrir o que está escrito:
+### Quando a segunda pessoa enviar o e-mail criptografado dele para você descobrir o que está escrito:
 Execute a versão de descriptografar:
 ```bash
 python "email criptografado (AES)/descriptografar_email.py"
@@ -47,7 +47,7 @@ python "email criptografado (AES)/descriptografar_email.py"
 
 ---
 
-## 🎓 Menu Completo e Simulação Automática
+## Menu Completo e Simulação Automática
 
 Você também pode abrir o menu unificado que reúne as duas versões:
 ```bash
@@ -61,7 +61,7 @@ python "email criptografado (AES)/main.py" --demo
 
 ---
 
-## 🧪 Executando os Testes Automatizados
+## Executando os Testes Automatizados
 
 Para rodar os testes unitários desta atividade:
 ```bash
@@ -70,7 +70,7 @@ python -m unittest discover -s "email criptografado (AES)" -p "test_*.py" -v
 
 ---
 
-## 🔐 Como Funciona a Segurança Criptográfica deste Projeto?
+## Como Funciona a Segurança Criptográfica deste Projeto?
 
 1. **Confidencialidade com AES-256**: O conteúdo do e-mail é cifrado com chaves de 256 bits usando a biblioteca `cryptography`. Mesmo que alguém intercepte o e-mail no caminho, verá apenas bytes pseudoaleatórios em Base64 impossíveis de reverter sem a chave.
 2. **Vetor de Inicialização (IV / Nonce) Único**: Cada e-mail gera um `nonce` criptograficamente aleatório (`os.urandom`), garantindo que dois e-mails idênticos cifrados com a mesma chave gerem textos cifrados completamente diferentes.
