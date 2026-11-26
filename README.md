@@ -1,12 +1,12 @@
-# Repositório de Atividades Práticas - Introdução à Criptografia
+# Repositório de Atividades Práticas — Introdução à Criptografia
 
-Este repositório reúne as implementações completas, resolvidas, testadas e documentadas das atividades práticas de código referentes aos **Cadernos do Aluno** da disciplina de Introdução à Criptografia.
+Este repositório reúne as implementações completas, resolvidas, testadas e documentadas das atividades práticas de código referentes aos **13 Cadernos do Aluno (Encontros 01 ao 13)** da disciplina de Introdução à Criptografia.
 
 Cada encontro possui sua própria pasta isolada contendo o código-fonte executável, suíte de testes unitários automatizados com `unittest` e um arquivo explicativo `README.md` detalhando as justificativas matemáticas, propriedades de segurança e respostas aos desafios conceituais.
 
 ---
 
-## Estrutura do Repositório
+## 📁 Estrutura do Repositório
 
 ```text
 Cripto/
@@ -22,14 +22,15 @@ Cripto/
 ├── caderno_10_encontro10/    # Acordo X25519, Derivação HKDF e Intermediário (Mallory/MITM)
 ├── caderno_11_encontro11/    # RSA Didático, Maleabilidade Homomórfica e Padrões OAEP/PSS
 ├── caderno_12_encontro12/    # Diffie-Hellman em Subgrupo Cíclico, Auditoria e Cifração ElGamal
+├── caderno_13_encontro13/    # Curvas Elípticas, Lei de Grupo, Multiplicação Escalar e ECDH
 ├── requirements.txt          # Dependências do projeto (cryptography >= 41.0.0)
-├── run_all.py                # Orquestrador global de testes automatizados (79 testes)
+├── run_all.py                # Orquestrador global de testes automatizados (88 testes)
 └── README.md                 # Guia geral de execução e documentação
 ```
 
 ---
 
-## Visão Geral dos Cadernos
+## 📚 Visão Geral dos Cadernos
 
 | Caderno / Encontro | Tema Principal | Arquivos Principais | Conceito-Chave |
 | :--- | :--- | :--- | :--- |
@@ -45,10 +46,11 @@ Cripto/
 | **Caderno 10 (Encontro 10)** | Chave Pública e MITM | `x25519_hkdf_mitm.py`, `atividade_11.py` | Curvas elípticas X25519, HKDF e simulação de ataque de intermediário. |
 | **Caderno 11 (Encontro 11)** | RSA Didático, OAEP e PSS | `rsa_modular_oaep_pss.py`, `atividade_11.py` | Maleabilidade do RSA bruto e padrões seguros RSA-OAEP e RSA-PSS. |
 | **Caderno 12 (Encontro 12)** | Diffie-Hellman e ElGamal | `dh_subgrupo_elgamal.py`, `atividade_11.py` | Subgrupo de ordem prima, auditoria e limites da validação matemática. |
+| **Caderno 13 (Encontro 13)** | Curvas Elípticas e ECDH | `curva_eliptica_ecdh.py`, `atividade_11.py` | Lei de grupo, soma, duplicação, duplicar-e-somar, ECDH e ECDLP. |
 
 ---
 
-## Pré-requisitos e Instalação
+## 🛠️ Pré-requisitos e Instalação
 
 ### Requisitos
 * **Python 3.10 ou superior**
@@ -82,7 +84,7 @@ python -m pip install -r requirements.txt
 
 ---
 
-## Como Executar os Códigos
+## 🚀 Como Executar os Códigos
 
 ### Executando o script principal de uma atividade específica:
 Você pode executar o arquivo `atividade_11.py` de qualquer caderno:
@@ -90,19 +92,20 @@ Você pode executar o arquivo `atividade_11.py` de qualquer caderno:
 python caderno_01_encontro01/atividade_11.py
 python caderno_07_encontro07/atividade_11.py
 python caderno_12_encontro12/atividade_11.py
+python caderno_13_encontro13/atividade_11.py
 ```
 
 ### Executando os testes unitários de um caderno específico:
 ```bash
 python -m unittest discover -s caderno_01_encontro01 -p "test_*.py" -v
-python -m unittest discover -s caderno_09_encontro09 -p "test_*.py" -v
+python -m unittest discover -s caderno_13_encontro13 -p "test_*.py" -v
 ```
 
 ---
 
-## Execução Global de Todos os Testes
+## 🧪 Execução Global de Todos os Testes
 
-O repositório disponibiliza um script unificado (`run_all.py`) que executa a suíte de testes de todos os 12 cadernos e imprime um relatório consolidado com tempo e status:
+O repositório disponibiliza um script unificado (`run_all.py`) que executa a suíte de testes de todos os cadernos e imprime um relatório consolidado com tempo e status:
 
 ```bash
 python run_all.py
@@ -113,9 +116,9 @@ Alternativamente, é possível executar a descoberta nativa do `unittest` a part
 python -m unittest discover -p "test_*.py" -v
 ```
 
-> **Resultado dos testes:** Todos os **79 testes automatizados** passam com **100% de sucesso**.
+> **Resultado dos testes:** Todos os **88 testes automatizados** passam com **100% de sucesso**.
 
 ---
 
-## Aviso Acadêmico e Limites de Segurança
-Os parâmetros reduzidos utilizados em algumas atividades (como chaves de 4 bits no Feistel, blocos de 4 bits nos modos de operação, RSA com primos pequenos $p=7, q=13$ e grupo Diffie-Hellman com $p=23$) têm **finalidade estritamente didática** para permitir cálculos manuais, inspeção passo a passo e compreensão conceitual de vulnerabilidades. Para uso em produção, devem ser utilizadas bibliotecas auditadas (como `cryptography`) com algoritmos e parâmetros padronizados (AES-GCM de 256 bits, Ed25519/X25519, RSA-OAEP/PSS $\ge$ 2048/3072 bits, SHA-256/SHA-512).
+## 🛡️ Aviso Acadêmico e Limites de Segurança
+Os parâmetros reduzidos utilizados em algumas atividades (como chaves de 4 bits no Feistel, blocos de 4 bits nos modos de operação, RSA com primos pequenos $p=7, q=13$, grupo Diffie-Hellman com $p=23$ e curva elíptica sobre $\mathbb{F}_{17}$) têm **finalidade estritamente didática** para permitir cálculos manuais, inspeção passo a passo e compreensão conceitual de vulnerabilidades. Para uso em produção, devem ser utilizadas bibliotecas auditadas (como `cryptography`) com algoritmos e parâmetros padronizados (AES-GCM de 256 bits, Ed25519/X25519, RSA-OAEP/PSS $\ge$ 2048/3072 bits, SHA-256/SHA-512).

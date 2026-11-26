@@ -1,0 +1,10 @@
+{
+  "algoritmo": "AES-256-GCM",
+  "modo": "GCM",
+  "remetente": "joao.verissimo@aluno.ifsp.edu.br",
+  "destinatario": "monteiro.alice@aluno.ifsp.edu.br",
+  "assunto": "Mensagem Especial Criptografada (Atividade AES)",
+  "iv_nonce": "xZsm2G+P23b9sRhP",
+  "salt": null,
+  "ciphertext": "pzSwK7pFlC7eMf92Gta3C8gQv7BpPIcQ9Hk1c2qeMSca2K6WuBF6d4D+v7Bf4PdkPLIz7tNyOi09eCT0KAmQOsaeozT8+e9Pi4kgTVKNbDWKQRC+rpZfAwOHgLXVS/Ajw6HQzqFQCkrZ2Vo9BGpoKI2nsJGG2eCSsZwdJHnDV2qFa5hKStgZZjFdZjaMihj0E93OFJgM33DE7kc403wYU0G4DYu94N3MI93aORL158I8tsi8AyNgHu9du24M6vtjgheRlSUplDcwcQEg96M2cWqfw/+vHz+/eg2qpqWyeIoMKw34V+zkBKlDK15pjfNGr2lBxrf0bjZPy6rP2H12EVt2ZCvY7qGlaX3zZXxpk3A="
+}
